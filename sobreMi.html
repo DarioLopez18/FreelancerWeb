@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SobreMi</title>
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="css/style.css" as="style">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!--Titulo o contenido mas importante-->
+    <header>
+        <h1 class="sobre">SOBRE MÍ</h1>
+    </header>
+    <!--Navegacion SOBRE MI-->
+    <div class="nav-bg">
+        <nav class="navegacion-sobre contenedor">
+            <a href="#bio">Biografía</a>
+            <a href="#certificacion">Certificaciones</a>
+            <a href="#contact">Contacto</a>
+        </nav>
+    </div>
+    <!--Contenido principal o mas importante-->
+    <main class="sombra contenedor">
+        <!--Seccion biografia-->
+        <section class="sobreMI" name="bio" id="bio">
+            <h2 class="fot">Biografía</h2>
+            <img class="mipic" src="img/WhatsApp Image 2022-12-25 at 19.44.46.jpeg">
+            <p class="biografia">
+                ¡Hola! mi nombre es Lopez, Dario Angel Jose. Tengo 21 años,
+                soy oriundo de la provincia de Mendoza en la República 
+                Argentina. Actualmente me encuentro cursando el cuarto año de
+                la carrera de Ingeniería en Sistemas de Información en la 
+                Universidad Tecnológica Nacional-Facultad Regional Mendoza.
+                Además de Estudiante de Ingeniería,soy técnico en reparación
+                de PC, y desde luego que,prácticamente desde mi infancia,
+                soy un aficionado por el mundo de la tecnología.Tanto en
+                hardware como en software. Mi pasión me ha llevado a la curiosidad,
+                la curiosidad a investigar.
+            </p>
+            <p class="text">
+                A lo largo de mi vida he realizado distintos cursos entre los cuales puedo distinguir:
+                Reparación de PC, reparación de Celulares, Programación en Java,programación en Python,
+                Diseño y Desarrollo web full stack.
+            </p>
+            <p class="add">
+                En cuanto al Desarrollo web full stack, podemos profundizar mis conocimientos en: 
+                Estructurar el contenido de una página web con HTML,darle estilos a con CSS,
+                en cuanto al back end poseo conocimientos sobre PHP y JS. En cuanto a los Framewokrs
+                tengo conocimientos básicos de React JS, y Node JS.
+            </p>
+        </section>
+        <!--Formulario de contacto-->
+        <form class="formulario2" name="contact" id="contact">
+            <fieldset class="ubi">
+                <p>Contactame llenando todos los campos</p>
+                <div class="contenedor-campos">
+                    <!--Campo para nombre-->
+                    <div class="campos">
+                        <label>Nombre</label>
+                        <input type="text" class="camposs"placeholder="Ingresa tu Nombre">    
+                    </div>
+                    <!--Campo para telefono-->
+                    <div class="campos">
+                        <label>Teléfono</label>
+                        <input type="tel" placeholder="Ingresa tu Teléfono">    
+                    </div>
+                    <!--Campo para correo-->
+                    <div class="campos">
+                        <label>Correo</label>
+                        <input type="email" placeholder="Ingresa tu email">
+                    </div>
+                    <!--Campo para mensaje-->
+                    <div class="campos">
+                        <label>Mensaje</label>
+                        <textarea></textarea>
+                    </div>
+                </div>
+                <!--Boton enviar-->
+                <div class="enviar">
+                    <input class="boton" type="submit" value="ENVIAR">
+                </div>
+            </fieldset>
+        </form> 
+    </main>
+    <!--Footer-->
+    <footer class="foot">
+        <p>Todos los derechos reservados.Dario Lopez Freelancer</p>
+    </footer>
+</body>
+</html>

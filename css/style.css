@@ -1,0 +1,502 @@
+/*Generales*/
+:root{
+    /**Paleta de Colores**/
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #FFC107;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --grisClaro: #DFE9F3;
+    /**Tipos de fuentes**/
+    --fuente-principal: font-family: 'Krub', sans-serif;
+    --fuente-secundaria: font-family: Arial, Helvetica, sans-serif;
+}
+/*Codigo que se aplica en todo el html*/
+html {
+    box-sizing: border-box;
+    font-size:62.5%; /*1rem ->10px*/
+    box-sizing: border-box;
+    scroll-snap-type: y proximity;
+}
+/*Este codigo sirve para detener el scroll en secciones determinadas para que sea mas facil navegar*/
+.servicio,.navegacion-principal,.formulario{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+*, *:before, *:after {
+    box-sizing: inherit; 
+}
+* { 
+    margin: 0;
+    padding: 0;   /*Le sacamos el borde al body de 16px*/
+    box-sizing: border-box;
+}
+/*codigo que se aplica a todo el body*/
+body {
+    font-size: 16px; /* 1rem = 10px */
+    font-family: 'Krub', sans-serif;  /*Todos los textos van a tener esta fuente*/
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100% ); /*Es para el degradado de blanco a celeste*/
+}
+/*adaptacion del tamaño de textos para pantallas de menor tamaño*/
+@media (max-width: 480px) {
+    h1{
+        font-size: 3.8rem;
+    }
+    h2{
+        font-size: 2rem;
+    }
+}
+@media (max-width: 480px) {
+    .titulo h1{
+        font-size: 2.5rem;
+    }
+    .titulo span{
+        font-size: 1.5rem;
+    }
+    .ubicacion h2{
+        font-size: 1.8rem;
+    }
+    .foot{
+        font-size: 1.2rem;
+    }
+}
+h2,h3{
+    text-align: center;
+}
+/*INDEX.HTML*/
+/*css para el header*/
+.titulo{
+    text-align: center;
+    font-size: 3.8rem;
+    text-transform: uppercase;
+}
+/*css para el span*/
+.titulo span{
+    font-size: 2.8rem;
+}
+/*Contenedor utilizado en la navegacion principal*/
+/*Navegacion principal*/
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.navegacion-principal{
+ display: flex;
+ justify-content: space-between;
+}
+.nav-bg{
+    background-color: var(--secundario);
+}
+
+.navegacion-principal a{
+    text-decoration: none;
+    padding: 1rem;
+    color: var(--blanco);
+}
+/*adaptacion para la navegacion en pantallas mas chicas*/
+@media (max-width: 960px) {
+    .navegacion-principal{
+        display: flex;
+        flex-direction: column;
+    }
+    .navegacion-principal a{
+        display: block;
+        text-align: center;
+    }
+}
+/*evento para cuando se pasa por encima de algun enlace de la navegacion*/
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+/*Css utilizado para la seccion debajo de la navegacion principal*/
+.ubicacion{
+    position: absolute;
+    background-color: rgba(0, 0, 0,0.8);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.ubicacion h2{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.ubicacion p{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.ubicacion a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--blanco);
+    background-color: var(--secundario);
+    padding: 1rem;
+    border-radius: .5rem;
+    margin-top: 1rem;
+}
+.img{
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+.ubicacion h2,.ubicacion p{
+    color: var(--blanco);
+}
+/*css utilizado para que la imagen se vea con una transparencia de fondo*/
+.sombra{
+    -webkit-box-shadow: 10px 5px 15px 0px rgba(112,112,112,0.54);
+    -moz-box-shadow: 10px 5px 15px 0px rgba(112,112,112,0.54);
+    box-shadow: 10px 5px 15px 0px rgba(112,112,112,0.54);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+/*css para el footer*/
+.foot{
+    text-align: center;
+    margin-top:2rem ;
+    margin-bottom: 2rem;
+    
+}
+/*CSS para los servicios*/
+.servicios{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+}
+.servicio p{
+    text-align: justify;
+    line-height: 2;
+    word-spacing: 0.2em;
+}
+/*adaptacion para las pantallas mas chicas*/
+@media (max-width: 960px) {
+    .servicios{
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+.servicio{
+    text-align: center;
+}
+.servicio h3{
+    color: var(--secundario);
+}
+/*css para el boton contactar*/
+.auxilio{
+    margin: 0 auto;
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/*css para el formulario*/
+.formulario{
+    background-color: var(--gris);
+    width: min(60rem,100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+/*adaptacion para pantallas*/
+@media (max-width: 480px) {
+    .enviar .boton{
+        width: 100%;
+    }
+}
+.formulario fieldset{
+    border: none;
+}
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+.formulario p{
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--primario);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+/*css para los servicios con display grid*/
+.contenedor-campos{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto auto 20 rem;
+    column-gap: 1rem;
+}
+.campos:nth-child(3),.campos:nth-child(4){
+    grid-column: 1/3;
+}
+.campos input,.campos textarea{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.campos textarea{
+    height: 20rem;
+}
+/*adaptaciones para pantallas chicas*/
+@media (max-width: 400px) {
+    .campos textarea{
+        height: 10rem;
+    }
+    .campos input{
+        font-size: 1rem;
+    }
+    .formulario p{
+        font-size: 1.5rem;
+    }
+}
+/*css para el boton del formulario*/
+.boton{
+    margin-top: 1.5rem;
+    padding:1rem;
+    background-color: var(--secundario);
+    border: none;
+    border-radius: .5rem;
+    color: var(--blanco);
+}
+.enviar{
+    display: flex;
+    justify-content: right;
+}
+/*INICIO.HTML*/
+/*CSS para el header*/
+.iniciotitulo{
+    text-align: center;
+    font-size: 3.8rem;
+}
+/*css para la navegacion*/
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.navegacion-inicio{
+    display: flex;
+    justify-content: space-between;
+}
+.contenedor-inicio{
+    background-color: var(--secundario);
+}
+.navegacion-inicio a{
+    text-decoration: none;
+    color: var(--blanco);
+    padding: 1rem;
+}
+/*adaptacion para pantallas mas chicas*/
+@media (max-width: 960px) {
+    .navegacion-inicio{
+        display: block;
+    }
+    .navegacion-inicio a{
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (max-width: 960px) {
+    .navegacion-inicio{
+        display: block;
+    }
+
+    .navegacion-inicio a{
+        display: flex;
+        justify-content: center;
+    }
+}
+/*evento para cuando se pasa por encima del enlace*/
+.navegacion-inicio a:hover{
+    color: var(--oscuro);
+    background-color: var(--primario);
+}
+/*css grid para las secciones */
+.web{
+    display: grid;
+	grid-template: 30px 200px 30px/ .5fr 1.5fr;
+	grid-template-areas: "menu menu" "contenido publicaciones";
+    background-color: var(--secundario);
+    margin-bottom: 20px;
+}
+/*adaptacion de pantallas mas chicas*/
+@media (max-width: 760px) {
+    .web{
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+        padding: 1rem;
+
+    }
+}
+/*tamaño de imagen*/
+.web img{
+    height: 200px;
+    width: 200px;
+}
+@media (min-width: 480px) {
+    .web img{
+        height: 150px;
+        width: 150px;
+    }
+}
+.menu {
+    grid-area: menu;
+    color: var(--blanco);
+}
+.contenido {
+    grid-area: contenido;
+    align-self: center;
+    justify-self: center;
+    color: var(--blanco);
+}
+.publicaciones {
+    grid-area: publicaciones;
+    align-self: center;
+    justify-self: center;
+    color: var(--blanco);
+}
+.sobre{
+    text-align: center;
+    font-size: 3.8rem;
+}
+/*css para el footer*/
+.fot{
+    font-size: 2rem;
+}
+/*SOBREMI.HTML*/
+.sobreMI{
+    display: grid;
+    grid-template: 40px 220px 90px 120px 120px/ .5fr 1.5fr;
+	grid-template-areas: "fot fot" "mipic biografia" "text text" "add add";
+    background-color: var(--secundario);
+    margin-bottom: 15px;
+    padding-top: 1rem;
+
+}
+/*adaptacion para pantallas mas chicas*/
+@media (max-width: 960px) {
+    .sobreMI{
+        display: flex;
+        flex-direction: column;
+    }
+    .sobreMI h2,.sobreMI .mipic,.sobreMI .biografia,.sobreMI .text,.sobreMI .add{
+        margin-bottom: 20px;
+    }
+}
+.sobreMI h2{
+    color: var(--blanco);
+}
+.sobreMI p{
+    color: var(--blanco);
+    line-height: 2;
+    word-spacing: 0.25em;
+    text-align: justify;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+/*footer*/
+.fot{
+    grid-area: fot;
+    text-transform: uppercase;
+}
+/*seccion para la biografia*/
+.biografia{
+    grid-area: biografia;
+}
+/*foto biografia*/
+.mipic{
+    grid-area: mipic;
+    align-self: center;
+    justify-self:center;
+}
+/*textos biografia*/
+.text {
+    grid-area: text;
+}
+.add{
+    grid-area: add;
+}
+.sobreMI img{
+    height: 200px;
+    width: 200px;
+}
+/*adaptacion pantallas chicas*/
+@media (max-width: 480px) {
+    .sobreMI img{
+        height: 150px;
+        width: 150px;
+    }
+
+}
+/*css navegacion sobre mi*/
+.navegacion-sobre{
+    display: flex;
+    justify-content:center;
+}
+.navegacion-sobre a{
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--blanco);
+}
+@media (max-width: 960px) {
+    .navegacion-sobre{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.navegacion-sobre a:hover{
+    color: var(--oscuro);
+    background-color: var(--primario);
+}
+/*css formulario sobre mi*/
+.formulario2 {
+    background-color: var(--gris);
+    width: min(60rem,100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+.formulario2 fieldset{
+    border: none;
+
+}
+.formulario2 legend{
+
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+.formulario2 p{
+    text-align: center;
+    color: var(--primario);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+/*adaptacion pantallas mas chicas*/
+@media (max-width: 400px) {
+    .formulario2 p{
+        font-size: 1.5rem;
+    }
+}
